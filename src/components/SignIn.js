@@ -22,7 +22,6 @@ export class SignIn extends Component {
         <h2>Already have an account?</h2>
         <span>Sign in with your email and password</span>
         <form onSubmit={(e) => e.preventDefault()}>
-          <label htmlFor="email">Email</label>
           <FormInput
             type="email"
             name="email"
