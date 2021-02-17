@@ -1,6 +1,8 @@
+import { userActionTypes } from './userActionTypes';
+
 // Action creator objects which are passed into reducers
 
 export const setCurrentUser = (user) => ({
-  type: 'SET_CURRENT_USER',
+  type: userActionTypes.setCurrentUser,
   payload: user,
 });
