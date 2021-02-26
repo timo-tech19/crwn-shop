@@ -11,12 +11,11 @@ import Checkout from './pages/Checkout';
 import { setCurrentUser } from './redux/user/userActions';
 import { createStructuredSelector } from 'reselect';
 import { selectCurrentUser } from './redux/user/userSelectors';
-
 class App extends Component {
     unsubscribeFromAuth = null;
 
     componentDidMount() {
-        const { setCurrentUser } = this.props;
+        const { setCurrentUser, collections } = this.props;
 
         this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
             // this.setState({ currentUser: user });
@@ -32,6 +31,11 @@ class App extends Component {
             } else {
                 setCurrentUser(null);
             }
+
+            // addCollectionAndDocs(
+            //     'collections',
+            //     collections.map(({ title, items }) => ({ title, items }))
+            // );
         });
     }
 
